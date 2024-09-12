@@ -1,0 +1,101 @@
+{% extends "skeleton.html" %}
+
+{% block title %} Heart Health Inspector {% endblock %}
+
+{% block stylesheet %}
+  <link
+  rel="stylesheet"
+  href="{{ url_for ('static', filename='css/index.css')}}"
+  />
+{% endblock %}
+
+{% block body %}
+  <div id="form-container-center">
+    <div id="form-container">
+      <form action="/result" method="post">
+        <div id="input-fields-container" class="container">
+          <div class="input-fields-column">
+            <label for="restingBP">Resting Blood Pressure</label><br>
+            <input type="number" id="restingBP" name="restingBP" required><br>
+            <label for="cholesterol">Cholesterol</label><br>
+            <input type="number" id="cholesterol" name="cholesterol"><br>
+          </div>
+          <div class="input-fields-column">
+            <label for="maxHR">Maximum Heart Rate</label><br>
+            <input type="number" id="maxHR" name="maxHR" required><br>
+            <label for="oldpeak">Oldpeak</label><br>
+            <input type="number" id="oldpeak" name="oldpeak" step="0.05"><br>
+          </div>
+        </div>
+        <div id="dropdown-container" class="container">
+          <div class="dropdown">
+            <label for="age">Age</label><br>
+            <select name="age" id="age" required></select>
+          </div>
+          <div class="dropdown">
+            <label for="chestPainType">Chest Pain Type</label><br>
+            <select name="chestPainType" id="chestPainType" required></select>
+          </div>
+          <div class="dropdown">
+            <label for="restingECG">Resting ECG</label><br>
+            <select name="restingECG" id="restingECG" required></select>
+          </div>
+          <div class="dropdown">
+            <label for="st_slope">ST Slope</label><br>
+            <select name="st_slope" id="st_slope" required></select>
+          </div>
+        </div>
+        <div id="radio-container" class="container">
+          <div class="radio">
+            <span>Gender:</span>
+            <input type="radio" name="gender" id="male" value="0" required>
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="female" value="1" required>
+            <label for="female">Female</label><br>
+          </div>
+          <div class="radio">
+            <span>Fasting Blood Sugar:</span>
+            <input type="radio" name="fastingBS" id="fastingBS0" value="0" required>
+            <label for="fastingBS0">0</label>
+            <input type="radio" name="fastingBS" id="fastingBS1" value="1">
+            <label for="fastingBS1">1</label><br>
+          </div>
+          <div class="radio">
+            <span>Exercise Angina:</span>
+            <input type="radio" name="exerciseAngina" id="exerciseAnginaY" value="Y">
+            <label for="exerciseAnginaY">Yes</label>
+            <input type="radio" name="exerciseAngina" id="exerciseAnginaN" value="N" required>
+            <label for="exerciseAnginaN">No</label><br>
+          </div>
+        </div>
+        <div id="form-buttons" class="container">
+          <input type="submit" value="Submit">
+          <input type="reset" value="Reset">
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}
+
+{% block scripts %}
+  <script src="{{ url_for('static', filename='js/dropdown_menu_value.js')}}"></script>
+{% endblock %}
+
+<!-- 
+  Sex: M, F                           radio box
+  FastingBS: 1, 0                     radio box
+  ExerciseAngina: Y, N                radio box
+  RestingBP: int high range           input field
+  Cholesterol: int high range         input field                   not *
+  MaxHR: int high range               input field
+  Oldpeak, float, -2 to 6             input field                   not *
+  Age: int                            input field / dropdown menu
+  ChestPainType: NAP, ASY, TA, ATA    dropdown menu
+  RestingECG: Normal, LVH, St         dropdown menu
+  ST_Slope: Down, Up, Flat            dropdown menu
+
+  input field = 5, 4
+  dropdown menu 3, 4
+  radio box = 3
+  -->
+

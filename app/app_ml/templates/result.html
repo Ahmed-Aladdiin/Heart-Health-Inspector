@@ -1,0 +1,27 @@
+{% extends "skeleton.html" %} {% block title %} Heart Health Inspector {%
+endblock %} {% block stylesheet %}
+<link
+  rel="stylesheet"
+  href="{{ url_for ('static', filename='css/result.css')}}"
+/>
+{% endblock %} {% block body %}
+<div id="result-container-center">
+  <div id="result-container" class="{{ result_class }}">
+    {% if result_class == 'healthy' %}
+    <img src="{{ url_for('static', filename='imgs/healthy.png')}}" />
+    {% elif result_class == 'warning' %}
+    <img src="{{ url_for('static', filename='imgs/warning.png')}}" />
+    {% else %}
+    <img src="{{ url_for('static', filename='imgs/error.png')}}" />
+    {% endif %}
+    <div id="result-message">
+      <h2>{{ result_message }}</h2>
+      <p>{{additional_message}}</p>
+    </div>
+  </div>
+  <a href="/" class="custom-button">New Inspection</a>
+</div>
+
+{% endblock %} {% block scripts %}
+<script src="{{ url_for('static', filename='js/dropdown_menu_value.js')}}"></script>
+{% endblock %}

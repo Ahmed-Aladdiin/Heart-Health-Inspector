@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.sk-color {
+  background-color: rgb(177, 255, 60);
+}
+
+nav {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+#logo-div {
+  display: flex;
+  align-items: center;
+  /* background-color: white; */
+  color: greenyellow;
+}
+
+#logo-img {
+  width: 70px;
+  margin-right: 12px;
+  filter: brightness(100%);
+}
+
+#navbar-brand {
+  font-size: 52px;
+  color: white;
+}
+
+.navbar-nav {
+  list-style-type: none;
+  display: flex;
+  font-size: 32px;
+  padding-top: 14px;
+  margin-left: 14px;
+  gap: 8px;
+}
+
+.navbar-nav .nav-item {
+  /* color: rgb(236, 255, 214); */
+  color: whitesmoke;
+  font-weight: bold;
+  text-decoration-line: underline;
+  text-decoration-color: whitesmoke;
+}
+
+#footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 50px;
+  color: white;
+  font-weight: bold;
+}
+
+.my-body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#form-buttons input, .custom-button {
+  padding: 12px 18px;
+  background-color: greenyellow;
+  border: none;
+  border-radius: 15px;
+  /* color: white; */
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: bold;
+  /* margin: 12px; */
+}

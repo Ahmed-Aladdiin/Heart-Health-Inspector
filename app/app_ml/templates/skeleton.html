@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for ('static', filename='css/skelaton.css')}}"
+    />
+    {% block stylesheet %}{% endblock %}
+    <title>{% block title %}Here goes the title {% endblock %}</title>
+  </head>
+  <body>
+    <nav class="sk-color">
+      <div id="logo-div">
+        <img
+          src="{{ url_for('static', filename='imgs/white_heart.png')}}"
+          alt="Green heart"
+          id="logo-img"
+        />
+        <a id="navbar-brand" href="/">Heart Health Inspector</a>
+      </div>
+      <div class="navbar-div">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/result">Result</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="my-body">
+      {% block body %} {% endblock %}
+    </div>
+
+    <footer id="footer" class="sk-color">
+      <div>
+        <span class="text-muted">© 2024 Heart Health Inspector / Ahmed Aladdin</span>
+      </div>
+    </footer>
+
+    {% block scripts %}{% endblock %}
+  </body>
+</html>

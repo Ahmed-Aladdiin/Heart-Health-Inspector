@@ -1,0 +1,46 @@
+#result-container-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+}
+
+#result-container {
+  border-radius: 50px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.healthy {
+  background-color: rgba(172, 255, 47, 0.801);
+}
+
+.warning {
+  background-color: rgba(255, 255, 0, 0.808);
+}
+
+.error {
+  background-color: rgba(255, 0, 0, 0.808);
+}
+
+#result-container img {
+  width: 60px;
+}
+
+#result-message {
+  margin: 20px;
+  align-items: center;
+  text-align: center;
+} 
+
+#result-message h2 {
+  margin-bottom: 12px;
+}
+
+#result-message p {
+  font-size: 20px;
+}
